@@ -1,0 +1,16 @@
+<Bundle xmlns:xi="http://www.w3.org/2001/XInclude" >
+
+	<!-- Definition of artifact types which are being imported into Squore -->
+	<ArtefactType id="TICKETS" heirs="APPLICATION;TICKET_FOLDER" />
+
+
+	<!-- Import of pre-configured Scales for Squore model -->
+	<xi:include href="../../Shared/Analysis/basic_scale_macros.xml" />
+	<xi:include href="../../Shared/Analysis/basic_scales.xml" />
+
+
+	<!-- Import of model packages -->
+	<xi:include href="rating.xml" />
+	<xi:include href="ticket.xml" />
+
+</Bundle>

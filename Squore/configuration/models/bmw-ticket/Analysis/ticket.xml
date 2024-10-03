@@ -1,0 +1,333 @@
+<package xmlns:xi="http://www.w3.org/2001/XInclude">
+	<!-- 
+		Author: Cyril Benkimoun - Vector Infortmatik
+		version 22.0.0
+	-->
+		<!-- Counting the number of test -->
+		<Measure measureId="TICKET" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS" />
+		</Measure>
+
+		<Measure measureId="TICKET_DELTA" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="DELTA_VALUE(TICKET)" />
+		</Measure>
+
+		<Measure measureId="NEW_TICKETS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE IS_NEW_ARTEFACT()" />
+		</Measure>
+
+		<Measure measureId="TOTAL_QUALITY_TICKETS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE EQUALS(INFO(TICKET_QUALITY),'Yes')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_ACTIVE" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CLOSED" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(PREVIOUS_INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(PREVIOUS_INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(PREVIOUS_INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(PREVIOUS_INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-over') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_PENDING" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'Pending')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_NEW" defaultValue="0" >
+		<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'New')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_OPEN" defaultValue="0" >
+		<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'Open')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_INPROGRESS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'In Progress')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CRITICAL" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (MATCHES(INFO(PRIORITY), 'Critical') OR MATCHES(INFO(PRIORITY), 'High'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_PENDING_CRITICAL" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'Pending')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (MATCHES(INFO(PRIORITY), 'Critical') OR MATCHES(INFO(PRIORITY), 'High'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_NEW_CRITICAL" defaultValue="0" >
+		<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'New')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (MATCHES(INFO(PRIORITY), 'Critical') OR MATCHES(INFO(PRIORITY), 'High'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_OPEN_CRITICAL" defaultValue="0" >
+		<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'Open')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (MATCHES(INFO(PRIORITY), 'Critical') OR MATCHES(INFO(PRIORITY), 'High'))" />
+		</Measure>
+
+		<Measure measureId="TOTAL_INPROGRESS_CRITICAL" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE (EQUALS(INFO(STATUS), 'In Progress')) AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Pre-analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis Vector') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Analysis BMW') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase')) AND (MATCHES(INFO(PRIORITY), 'Critical') OR MATCHES(INFO(PRIORITY), 'High'))" />
+		</Measure>
+		<!-- 
+			Related to ESCAN
+		-->
+
+		<Measure measureId="TOTAL_NON_ESCAN" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(ESCAN),'None') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+		<Measure measureId="TOTAL_ESCAN_FIXED" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(ESCAN),'ESCAN_fixed') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+		<Measure measureId="TOTAL_ESCAN_OPEN" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(ESCAN),'ESCAN_open') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+	
+	    <Measure measureId="TOTAL_NEW_NON_ESCAN" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(ESCAN),'None') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+		<Measure measureId="TOTAL_NEW_ESCAN_FIXED" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE NOT(CONTAINS(PREVIOUS_INFO(ESCAN),'ESCAN_fixed')) AND CONTAINS(INFO(ESCAN),'ESCAN_fixed') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+		<Measure measureId="TOTAL_NEW_ESCAN_OPEN" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE  NOT(CONTAINS(PREVIOUS_INFO(ESCAN),'ESCAN_open')) AND CONTAINS(INFO(ESCAN),'ESCAN_open') AND (EQUALS(INFO(CURRENT_PHASE_STR), 'Solution Phase') OR EQUALS(INFO(CURRENT_PHASE_STR), 'Resolved')  OR EQUALS(INFO(CURRENT_PHASE_STR), 'Hand-Over'))" />
+		</Measure>
+
+		<!-- 
+			Related to  catergories
+		-->
+
+
+		<Measure measureId="TOTAL_CAT_IPSEC" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'ipsec')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_DIAGCONFIG" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'diag_config')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_DIAGTESTER" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'diag_tester')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_DIAGREQ" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'diag_req')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_E2E" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'e2e')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_SHUTDOWN" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'shutdown')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_SOMEIPPEER" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'someip_peer')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_SOMEIPCONFIG" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'someip_config')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_EMTIMEOUT" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'em_timeout')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_SECPOL" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'secpol')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_USERCLBK" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'user_callback')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_AMSR" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'amsr')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_NOTAMSR" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'not_amsr')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_DOC" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'doc')" />
+		</Measure>
+
+		<Measure measureId="TOTAL_CAT_NONE" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(CATEGORY),'none')" />
+		</Measure>
+
+		<!-- 
+			Related to Performance 
+		-->
+
+
+		<Measure measureId="TOTAL_PERF_TICKETS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE CONTAINS(INFO(PERFORMANCE),'ipn_performance_daily') OR CONTAINS(INFO(PERFORMANCE),'Vector_Performance') OR CONTAINS(INFO(PERFORMANCE),'ipn_app_performance')" />
+		</Measure>
+
+			
+
+
+
+
+
+		<Measure measureId="TICKET_OK" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKET" result="
+			IF(NOT(MATCHES(INFO(STATUS), 'Resolved')), 
+				IF(MATCHES(INFO(PRIORITY), 'Critical'), 
+					IF(ANALYSIS_VECTOR &lt; 3, 
+						1, 
+						0), 
+					IF(ANALYSIS_VECTOR &lt; 30, 
+						1, 
+						0)), 
+				1)
+			" />		
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE TICKET_OK=1" />
+		</Measure>
+
+		<Measure measureId="CREATION_DATE" format="DATE" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="LAST_UPDATE" format="DATE" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="LAST_COMMENT_VECTOR" format="DATE" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="PROCESSING_TIME" format="HOURS" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="PRE_ANALYSIS_BMW" format="HOURS" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="PRE_ANALYSIS_VECTOR" format="HOURS" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="ANALYSIS_VECTOR" format="HOURS" targetArtefactTypes="TICKET" defaultValue="0" />
+		<Measure measureId="ANALYSIS_BMW" format="HOURS" targetArtefactTypes="TICKET" defaultValue="0" />
+
+		<!-- <Measure measureId="PROCESSING_TIME_SQUORE" format="DAYS" defaultValue="0"> -->
+			<!-- <Computation targetArtefactTypes="TICKET" result="TO_DAYS(LAST_UPDATE-CREATION_DATE)" /> -->
+			<!-- <Computation targetArtefactTypes="TICKET" result="TO_DAYS(DURATION_WITHOUT_WEEKEND(CREATION_DATE, LAST_UPDATE))" /> -->
+		<!-- </Measure> -->
+
+		<Indicator indicatorId="TICKET_OK_RATIO" measureId="TICKET_OK_RATIO" scaleId="SCALE_TICKET_OK_RATIO" displayTypes="VALUE;IMAGE" />
+		<Measure measureId="TICKET_OK_RATIO" format="PERCENT" dataBounds="[0;1]" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="IF(TICKET, TICKET_OK/TICKET, -1)" />
+		</Measure>
+
+		<Scale scaleId="SCALE_TICKET_OK_RATIO">
+			<ScaleLevel levelId="UNKNOWN" 	bounds="];0[" 				rank="-1" />
+			<ScaleLevel levelId="LEVELA" 	bounds="[1;1]" 				rank="0" />
+			<ScaleLevel levelId="LEVELB" 	bounds="[0.8;1[" 			rank="0.03125" />
+			<ScaleLevel levelId="LEVELC" 	bounds="]0.6;0.8[" 			rank="0.0625" />
+			<ScaleLevel levelId="LEVELD" 	bounds="[0.5;0.6]" 			rank="0.125" />
+			<ScaleLevel levelId="LEVELE" 	bounds="]0.3;0.5[" 			rank="0.25" />
+			<ScaleLevel levelId="LEVELF" 	bounds="[0.2;0.3]" 			rank="0.5" />
+			<ScaleLevel levelId="LEVELG" 	bounds="[0;0.2[" 			rank="1" />
+		</Scale>
+
+		<Indicator indicatorId="TICKET_WITH_WARNING" measureId="TICKET_WITH_WARNING" scaleId="SCALE_BOOLEAN" displayTypes="VALUE;IMAGE" />
+		<Measure measureId="TICKET_WITH_WARNING" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKET" result="IF(MATCHES(INFO(WARNING), 'None'), 0, 1)" />
+			<Computation targetArtefactTypes="TICKETS" result="COUNT TICKET FROM DESCENDANTS WHERE TICKET_WITH_WARNING=1" />
+		</Measure>
+
+
+		<Measure measureId="AVERAGE_PRE_ANALYSIS_BMW" format="HOURS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="AVR TICKET.PRE_ANALYSIS_BMW FROM DESCENDANTS" />
+		</Measure>
+		<Measure measureId="AVERAGE_PRE_ANALYSIS_VECTOR" format="HOURS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="AVR TICKET.PRE_ANALYSIS_VECTOR FROM DESCENDANTS" />
+		</Measure>
+		<Measure measureId="AVERAGE_ANALYSIS_VECTOR" format="HOURS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="AVR TICKET.ANALYSIS_VECTOR FROM DESCENDANTS" />
+		</Measure>
+		<Measure measureId="AVERAGE_ANALYSIS_BMW" format="HOURS" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKETS" result="AVR TICKET.ANALYSIS_BMW FROM DESCENDANTS" />
+		</Measure>
+
+		<Measure measureId="CURRENT_TARGET_GREEN_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_GREEN_TICKETS)" />
+		</Measure>
+		<Measure measureId="CURRENT_TARGET_YELLOW_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_YELLOW_TICKETS)" />
+		</Measure>
+		<Measure measureId="CURRENT_TARGET_RED_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_RED_TICKETS)" />
+		</Measure>
+		<Measure measureId="CURRENT_TARGET_GREEN40_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_GREEN40_TICKETS)" />
+		</Measure>
+		<Measure measureId="CURRENT_TARGET_YELLOW40_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_YELLOW40_TICKETS)" />
+		</Measure>
+		<Measure measureId="CURRENT_TARGET_RED40_TICKETS" defaultValue="0"  targetArtefactTypes="APPLICATION">
+			<Computation  targetArtefactTypes="TICKET_FOLDER" result="APP(CURRENT_TARGET_RED40_TICKETS)" />
+		</Measure>
+
+
+		<Indicator indicatorId="CURRENT_PHASE" measureId="CURRENT_PHASE" scaleId="CURRENT_PHASE" displayTypes="VALUE;IMAGE" />
+		<Measure measureId="CURRENT_PHASE" defaultValue="0" >
+			<Computation targetArtefactTypes="TICKET" result="IF(MATCHES(INFO(CURRENT_PHASE_STR),'Pre-analysis BMW'), 5,IF(MATCHES(INFO(CURRENT_PHASE_STR),'Analysis BMW'), 4,IF(MATCHES(INFO(CURRENT_PHASE_STR),'Pre-analysis Vector'), 3,IF(MATCHES(INFO(CURRENT_PHASE_STR),'Analysis Vector'), 2,IF(MATCHES(INFO(CURRENT_PHASE_STR),'Solution Phase'), 1,IF(MATCHES(INFO(CURRENT_PHASE_STR),'Resolved'), 0,-1))))))" />
+		</Measure>
+
+		<Scale scaleId="CURRENT_PHASE">
+			<ScaleLevel levelId="UNKNOWN" 				bounds="];0[" 			rank="-1" />
+			<ScaleLevel levelId="RESOLVED" 				bounds="[0;1[" 			rank="0" />
+			<ScaleLevel levelId="SOLUTION_PHASE" 		bounds="[1;2[" 			rank="1" />
+			<ScaleLevel levelId="ANALYSIS_VECTOR" 		bounds="[2;3[" 			rank="2" />
+			<ScaleLevel levelId="PRE_ANALYSIS_VECTOR" 	bounds="[3;4[" 			rank="3" />
+			<ScaleLevel levelId="ANALYSIS_BMW" 			bounds="[4;5[" 			rank="4" />
+			<ScaleLevel levelId="PRE_ANALYSIS_BMW" 		bounds="[5;[" 			rank="5" />
+		</Scale>
+
+		<Indicator indicatorId="ESCALATION" measureId="ESCALATION" scaleId="ESCALATION" targetArtefactTypes="TICKET" />
+		<Measure measureId="ESCALATION">
+			<Computation targetArtefactTypes="TICKET" result="
+			IF(I.CURRENT_PHASE=PRE_ANALYSIS_BMW, 
+				IF(MATCHES(INFO(PRIORITY),'Top|Critical|High'),    
+					FIND_RANK(ESCALATION_MAP_4_8,PRE_ANALYSIS_BMW),    
+					IF(MATCHES(INFO(PRIORITY),'(Medium)'),     
+						FIND_RANK(ESCALATION_MAP_12_24,PRE_ANALYSIS_BMW),     
+						-1
+					),
+				),
+				IF(I.CURRENT_PHASE=ANALYSIS_VECTOR, 
+					IF(MATCHES(INFO(PRIORITY),'Top'),    
+						FIND_RANK(ESCALATION_MAP_8_16,ANALYSIS_VECTOR),    
+						IF(MATCHES(INFO(PRIORITY),'(Critical|High)'),     
+							FIND_RANK(ESCALATION_MAP_16_32,ANALYSIS_VECTOR),     
+							IF(MATCHES(INFO(PRIORITY),'(Medium)'),     
+								FIND_RANK(ESCALATION_MAP_32_64,ANALYSIS_VECTOR),     
+								-1     
+							)
+						)
+					),
+					-1
+				)
+			)   " />
+		</Measure>
+
+
+		<!-- Scales to diferent types of Escalation triggers -->
+		<Scale scaleId="ESCALATION_MAP_4_8" macro="ESCALATION_MAP_MACRO" vars="4;8" />
+		<Scale scaleId="ESCALATION_MAP_8_16" macro="ESCALATION_MAP_MACRO" vars="8;16" />
+		<Scale scaleId="ESCALATION_MAP_12_24" macro="ESCALATION_MAP_MACRO" vars="12;24" />
+		<Scale scaleId="ESCALATION_MAP_16_32" macro="ESCALATION_MAP_MACRO" vars="16;32" />
+		<Scale scaleId="ESCALATION_MAP_32_64" macro="ESCALATION_MAP_MACRO" vars="32;64" />
+
+		<!-- Macro scale to define Escalation trigger Scales -->
+		<ScaleMacro id="ESCALATION_MAP_MACRO">
+			<ScaleLevel levelId="NO_ESCALATION" bounds="[0;{0}[" rank="0" />
+			<ScaleLevel levelId="WARNING_BEFORE_ESCALATION" bounds="[{0};{1}[" rank="1" />
+			<ScaleLevel levelId="TRIGGER_ESCALATION" bounds="[{1};[" rank="2" />
+		</ScaleMacro>
+
+		<Scale scaleId="ESCALATION">
+			<ScaleLevel levelId="UNKNOWN" 						bounds="];0[" 			rank="-1" />
+			<ScaleLevel levelId="NO_ESCALATION" 				bounds="[0;1[" 			rank="0" />
+			<ScaleLevel levelId="WARNING_BEFORE_ESCALATION" 	bounds="[1;2[" 			rank="1" />
+			<ScaleLevel levelId="NEED_ESCALATION" 				bounds="[2;3[" 			rank="2" />
+		</Scale>
+
+		<Indicator indicatorId="CURRENT_ESC_STATUS" measureId="CURRENT_ESC_STATUS" scaleId="CURRENT_ESC_STATUS" displayTypes="VALUE;LEVEL" targetArtefactTypes="TICKETS" />
+		<Measure measureId="CURRENT_ESC_STATUS" defaultValue="0" >
+			<!-- <Computation targetArtefactTypes="TICKETS" result="IF(TOTAL_ACTIVE &lt;= CURRENT_TARGET_GREEN_TICKETS AND TOTAL_CRITICAL &lt;= CURRENT_TARGET_GREEN40_TICKETS, 0, IF(TOTAL_ACTIVE &lt;= CURRENT_TARGET_YELLOW_TICKETS, 1, IF(TOTAL_ACTIVE &gt; CURRENT_TARGET_YELLOW_TICKETS, 2, -1)))" /> -->
+			<Computation targetArtefactTypes="TICKETS" result="IF(TOTAL_ACTIVE &gt; CURRENT_TARGET_YELLOW_TICKETS OR TOTAL_CRITICAL &gt; CURRENT_TARGET_YELLOW40_TICKETS, 2, IF(TOTAL_ACTIVE &lt;= CURRENT_TARGET_YELLOW_TICKETS OR TOTAL_CRITICAL &lt;=; CURRENT_TARGET_YELLOW40_TICKETS, 1, 0))" />
+		</Measure>
+
+		<Scale scaleId="CURRENT_ESC_STATUS">
+			<ScaleLevel levelId="NONE" 				    bounds="];0[" 			rank="-1" />
+			<ScaleLevel levelId="GREEN" 				bounds="[0;1[" 			rank="0" />
+			<ScaleLevel levelId="YELLOW" 	            bounds="[1;2[" 			rank="1" />
+			<ScaleLevel levelId="RED" 				    bounds="[2;[" 			rank="2" />
+		</Scale> 
+
+
+</package>

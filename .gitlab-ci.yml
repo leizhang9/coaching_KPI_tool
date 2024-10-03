@@ -1,0 +1,26 @@
+stages:
+  - daily-run
+
+daily-job:
+  image: pes-global-docker-prod.vegistry.vg.vector.int/vector/root/python3:latest 
+  tags:   
+    - free-linux-docker  
+  stage: daily-run
+  before_script:
+    - pip install prompt_toolkit
+    - pip install jira
+    - pip install datetime
+    - pip install holidays
+    - pip install pandas
+    - pip install openpyxl
+    - export no_proxy="$no_proxy,cc-github.bmwgroup.net,ddad.artifactory.cc.bmwgroup.net, cc.bmwgroup.net"
+  script:
+    - echo "This job runs bmwjira2.py."
+    - python3 bmwjira2.py -t .token
+    - echo "Finished."
+  artifacts:
+    paths:
+      - vector_bugs_with_filter2.csv
+      - summarized.csv
+      - formatted_summarized.xlsx
+    expire_in: 1 week  

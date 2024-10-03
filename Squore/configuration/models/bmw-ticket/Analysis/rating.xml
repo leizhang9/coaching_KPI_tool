@@ -1,0 +1,24 @@
+<package xmlns:xi="http://www.w3.org/2001/XInclude">
+	<!-- 
+		Author: Cyril Benkimoun - Vector Infortmatik
+		version 22.0.0
+	-->
+
+	<RootIndicator artefactTypes="APPLICATION"	indicatorId="QUALITY"/>
+	<RootIndicator artefactTypes="TICKET_FOLDER"	indicatorId="QUALITY"/>
+	<RootIndicator artefactTypes="TICKET"			indicatorId="QUALITY"/>
+
+	
+	<Scale scaleId="SCALE_RATE" macro="MIN_LEVEL7" vars="0.1;0.2;0.4;0.6;0.8;1" />
+
+			
+	<Indicator indicatorId="QUALITY" scaleId="SCALE_RATE" displayTypes="VALUE;IMAGE" />
+	<Measure measureId="QUALITY" defaultValue="-1" >
+		<Computation targetArtefactTypes="APPLICATION" result="TICKET_OK_RATIO" />
+		<Computation targetArtefactTypes="TICKET_FOLDER" result="TICKET_OK_RATIO" />
+		<Computation targetArtefactTypes="TICKET" result="TICKET_OK" />
+	</Measure>
+	
+	
+
+</package>

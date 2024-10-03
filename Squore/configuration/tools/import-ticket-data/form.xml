@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tags needSources="false" image="">
+
+	<tag type="file_or_directory" key="all_files" multi="true"/>
+
+
+	<exec-phase id="add-data">
+		<exec name="java">
+			<arg value="${javaClasspath(groovy)}"/>
+			<arg value="${javaClasspath(poi,csv,groovy,jackson)}"/>
+			<arg value="groovy.lang.GroovyShell" />
+			<arg value="${getToolConfigDir(import-ticket-data.groovy)}" />
+			<arg value="${outputDirectory}" />
+			<arg tag="all_files" />
+		</exec>
+	</exec-phase>
+</tags>
