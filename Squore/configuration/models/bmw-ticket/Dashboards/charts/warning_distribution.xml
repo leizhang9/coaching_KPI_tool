@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="WARNING_DISTRIBUTION" type="SimpleBar">
+  <paths>
+    <path targetArtefactTypes="TICKET" />
+  </paths>
+  <indicator>TICKET_WITH_WARNING</indicator>
+  <value />
+</chart>

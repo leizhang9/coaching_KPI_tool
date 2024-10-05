@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="TREND_CRITICAL" type="TE" decimals="0" onlyLast="6">
+  <dataset renderer="STACKED_BAR">
+    <measure label="New" color="#0260bf">TOTAL_NEW_CRITICAL</measure>
+    <measure label="Open" color="#ffab2c">TOTAL_OPEN_CRITICAL</measure>
+    <measure label="Pending" color="#ff776d">TOTAL_PENDING_CRITICAL</measure>
+    <measure label="In Progress" color="#90ad67">TOTAL_INPROGRESS_CRITICAL</measure>
+  </dataset>
+  <dataset renderer="AREA">
+    <measure label=" " color="#4ed814" alpha="90">CURRENT_TARGET_GREEN40_TICKETS</measure>
+    <measure label=" " color="#fbf716" alpha="75">CURRENT_TARGET_YELLOW40_TICKETS</measure>
+    <measure label=" " color="#eb0d0d" alpha="40">
+      CURRENT_TARGET_RED40_TICKETS
+      <forecast degree="5" minNb="3" maxNb="5" />
+    </measure>
+  </dataset>
+  <dataset renderer="LINE">
+    <measure label="Total Tickets" color="#0912e3">TOTAL_CRITICAL</measure>
+  </dataset>
+</chart>
+

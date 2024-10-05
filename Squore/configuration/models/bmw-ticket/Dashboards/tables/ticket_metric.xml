@@ -1,0 +1,10 @@
+<table id="TICKET_METRIC">
+	<line measureId="CREATION_DATE" />  
+	<line measureId="PROCESSING_TIME" />  
+	<line measureId="LAST_UPDATE" />  
+	<line measureId="PRE_ANALYSIS_BMW" />  
+	<line measureId="PRE_ANALYSIS_VECTOR" />  
+	<line measureId="ANALYSIS_VECTOR" />  
+	<line measureId="ANALYSIS_BMW" />  
+	<!-- <line measureId="PROCESSING_TIME_SQUORE" />   -->
+</table>

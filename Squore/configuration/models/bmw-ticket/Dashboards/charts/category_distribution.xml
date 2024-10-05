@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="CATEGORY_CHART" type="OptimizedBar">
+  <measure label="amsr">TOTAL_CAT_AMSR</measure>
+  <measure label="diag config">TOTAL_CAT_DIAGCONFIG</measure>
+  <measure label="diag req">TOTAL_CAT_DIAGREQ</measure>
+  <measure label="diag tester">TOTAL_CAT_DIAGTESTER</measure>
+  <measure label="doc">TOTAL_CAT_DOC</measure>
+  <measure label="e2e">TOTAL_CAT_E2E</measure>
+  <measure label="EM Timeout">TOTAL_CAT_EMTIMEOUT</measure>
+  <measure label="IPSec">TOTAL_CAT_IPSEC</measure>
+  <measure label="none">TOTAL_CAT_NONE</measure>
+  <measure label="Not AMSR">TOTAL_CAT_NOTAMSR</measure>
+  <measure label="Secpol">TOTAL_CAT_SECPOL</measure>
+  <measure label="shutdown">TOTAL_CAT_SHUTDOWN</measure>
+  <measure label="SOMEIP Config">TOTAL_CAT_SOMEIPCONFIG</measure>
+  <measure label="SOMEIP Peer">TOTAL_CAT_SOMEIPPEER</measure>
+  <measure label="User Callback">TOTAL_CAT_USERCLBK</measure>
+</chart>
+

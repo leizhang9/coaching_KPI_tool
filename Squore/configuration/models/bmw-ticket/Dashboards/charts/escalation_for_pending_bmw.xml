@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="ESCALATION_FOR_PENDING_BWM" type="SimpleBar" displayEmptyData="true">
+  <paths>
+    <path targetArtefactTypes="TICKET">
+      <where>
+        <indicator id="ESCALATION" levels="UNKNOWN" invert="true" />
+        <indicator id="CURRENT_PHASE" levels="ANALYSIS_BMW" />
+      </where>
+    </path>
+  </paths>
+  <indicator excludeLevels="UNKNOWN">ESCALATION</indicator>
+  <value />
+</chart>

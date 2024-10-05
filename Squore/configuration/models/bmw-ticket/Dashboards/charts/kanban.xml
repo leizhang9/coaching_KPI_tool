@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="KANBAN" type="ArtefactScrumBoard" colorFromIndicator="ESCALATION" displayEmptyData="true" invertedLevels="true">
+  <paths>
+    <path targetArtefactTypes="TICKET" />
+  </paths>
+    <indicator excludeLevels="RESOLVED;UNKNOWN">CURRENT_PHASE</indicator>
+  <value />
+</chart>

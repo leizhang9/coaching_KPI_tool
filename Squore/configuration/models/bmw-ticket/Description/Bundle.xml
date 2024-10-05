@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Bundle xmlns:xi="http://www.w3.org/2001/XInclude">
+	
+	<Properties src="../../Shared/Analysis/SQuORE_PerformanceLevels" />
+	<Properties src="../../Shared/Analysis/SQuORE_BasicScales" />
+
+
+	<Properties src="local" />
+	
+</Bundle>
+

@@ -1,0 +1,3 @@
+<chart type="Indicator" id="INDICATOR" name="Key Performance Indicator" topText="Higher Quality" bottomText="Lower Quality">
+	<indicator excludeLevels="UNKNOWN">LEVEL</indicator>
+</chart>

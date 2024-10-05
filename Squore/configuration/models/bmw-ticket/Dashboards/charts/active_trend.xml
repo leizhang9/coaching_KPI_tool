@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="TREND_ACTIVE" type="TE" onlyLast="6">
+  <dataset renderer="STACKED_BAR">
+    <measure label="New" color="#0260bf">TOTAL_NEW</measure>
+    <measure label="Open" color="#ffab2c">TOTAL_OPEN</measure>
+    <measure label="Pending" color="#ff776d">TOTAL_PENDING</measure>
+    <measure label="In Progress" color="#90ad67">TOTAL_INPROGRESS</measure>
+  </dataset>
+  <dataset renderer="AREA">
+    <measure label="No Risk" color="#4ed814" alpha="70">CURRENT_TARGET_GREEN_TICKETS</measure>
+    <measure label="Potential Risk" color="#e8e412" alpha="50">CURRENT_TARGET_YELLOW_TICKETS</measure>
+    <measure label="High Risk" color="#eb0d0d" alpha="30">CURRENT_TARGET_RED_TICKETS</measure>
+  </dataset>
+  <dataset renderer="LINE">
+    <measure label="Total Tickets" color="#0912e3">TOTAL_ACTIVE</measure>
+  </dataset>
+</chart>
+

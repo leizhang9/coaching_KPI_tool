@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="TICKET_DISTRIBUTION" type="SimplePie">
+    <paths>
+        <path targetArtefactTypes="TICKET" />
+    </paths>
+    <info>PRIORITY</info>
+	  <info>STATUS</info>
+</chart>

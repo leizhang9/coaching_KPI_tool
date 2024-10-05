@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="PHASE_DITRIBUTION" type="SimpleBar">
+  <paths>
+    <path targetArtefactTypes="TICKET" />
+  </paths>
+  <info>CURRENT_PHASE_STR</info>
+  <value />
+</chart>

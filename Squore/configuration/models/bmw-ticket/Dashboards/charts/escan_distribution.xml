@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="ESCAN_PIE" type="OptimizedPie">
+  <measure label="ESCAN_Fixed">TOTAL_ESCAN_FIXED</measure>
+  <measure label="ESCAN_Open">TOTAL_ESCAN_OPEN</measure>
+  <measure label="NO ESCAN">TOTAL_NON_ESCAN</measure>
+</chart>

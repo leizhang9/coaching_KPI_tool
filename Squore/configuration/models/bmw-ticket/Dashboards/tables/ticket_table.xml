@@ -1,0 +1,4 @@
+<table id="TICKET_TABLE">
+    <line indicatorId="TOTAL_QUALITY_TICKETS" />
+     <line indicatorId="TOTAL_ACTIVE" />
+</table>

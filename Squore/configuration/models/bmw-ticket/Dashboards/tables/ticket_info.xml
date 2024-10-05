@@ -1,0 +1,15 @@
+<table id="TICKET_INFO">
+    <line infoId="ID" />  
+	<line infoId="URL" />  
+	<line infoId="SUMMARY" />  
+	<line infoId="ASSIGNEE" />  
+	<line infoId="REPORTER" />  
+	<line infoId="STATUS" />  
+	<line infoId="PRIORITY" />  
+	<line infoId="CURRENT_PHASE_STR" />  
+	<line infoId="PHASE_TRANSITION" />  
+	<line infoId="SOLUTION_PHASE" />  
+	<line infoId="NUMBER_OF_CYCLES" />  
+	<line infoId="WARNING" />  
+	<line infoId="COMMENT" />  
+</table>

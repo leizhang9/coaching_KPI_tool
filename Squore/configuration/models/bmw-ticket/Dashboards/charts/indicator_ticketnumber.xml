@@ -1,0 +1,3 @@
+<chart type="KPI" id="INDICATOR_TICKETNUMBER" name="Support Risk Management" topText="" bottomText="">
+	<indicator excludeLevels="NONE">CURRENT_ESC_STATUS</indicator>
+</chart>

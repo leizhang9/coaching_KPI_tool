@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="AVR_TIME" type="TE" onlyLast="7">
+  <dataset renderer="BAR">
+    <measure>AVERAGE_PRE_ANALYSIS_BMW</measure>
+    <measure>AVERAGE_ANALYSIS_BMW</measure>
+    <measure>AVERAGE_PRE_ANALYSIS_VECTOR</measure>
+    <measure>AVERAGE_ANALYSIS_VECTOR</measure>
+  </dataset>
+</chart>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="TICKET_QUALITY_NUMBER" type="TextValues">
+  <measure>TOTAL_QUALITY_TICKETS</measure>
+</chart>

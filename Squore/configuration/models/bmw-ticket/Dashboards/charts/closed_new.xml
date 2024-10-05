@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="CLOSED_NEW" type="TE" onlyLast="7">
+  <dataset renderer="BAR">
+    <measure label="Inflow" >TICKET_DELTA</measure>
+    <measure label="Current">TOTAL_ACTIVE</measure>
+    <measure label="Outflow">TOTAL_CLOSED</measure>
+  </dataset>
+</chart>

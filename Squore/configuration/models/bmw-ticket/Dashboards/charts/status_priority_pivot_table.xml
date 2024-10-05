@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="STATUS_PRIORITY_PIVOT_TABLE" type="PivotTable">
+  <paths>
+    <path targetArtefactTypes="TICKET">
+      <where>
+        <info id="CURRENT_PHASE_STR" values="Resolved,Unkown" invert="true" />
+      </where>
+    </path>
+  </paths>
+  <info>PRIORITY</info>
+  <info excludeInfos="Resolved;Unkown">CURRENT_PHASE_STR</info>
+  <columns />
+</chart>

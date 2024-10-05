@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart yMin="0" yLabel="Total ESCAN Tickets" id="ESCANS" type="TEOStackedBar" renderer="STACKED_BAR">
+  <measure label="ESCAN_fixed">TOTAL_NEW_ESCAN_FIXED</measure>
+  <measure label="ESCAN_open">TOTAL_NEW_ESCAN_OPEN</measure>
+</chart>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+	<dashboard id="QUALITY" onArtefactTypes="APPLICATION;TICKET_FOLDER" nbColumns="4" template="1:2x1;2:2x1;3:2x1;4:2x1;5:1x1;6:1x1;7:1x1;8:1x1" rowMaxHeight="250" topTablesMaxLines="8">
+		<tables>
+		</tables>
+		<charts>
+    		<!-- <xi:include href="charts/ticket_distribution.xml" /> -->
+			<xi:include href="charts/active_trend_critical.xml" />
+			<xi:include href="charts/active_trend.xml" />
+			<xi:include href="charts/closed_new.xml" />
+			<xi:include href="charts/escalation_for_analysis_vector.xml" />
+			<xi:include href="charts/indicator_ticketnumber.xml" />
+			<xi:include href="charts/category_distribution.xml" />
+			<xi:include href="charts/escan_distribution.xml" />
+			<xi:include href="charts/escan_trend.xml" />
+		</charts>
+	</dashboard>
+
+	<dashboard id="DISPATCHER" onArtefactTypes="APPLICATION;TICKET_FOLDER" nbColumns="4" template="1:1x1;2:3x1;3:2x1;4:2x1;5:2x1;6:2x1;7:2x1;8:2x1;9:4x1" rowMaxHeight="250" topTablesMaxLines="8">
+		<tables>
+			 <xi:include href="tables/ticket_table.xml" /> 
+		</tables>
+		<charts>
+    		<!-- <xi:include href="charts/ticket_distribution.xml" /> -->
+			<xi:include href="charts/indicator_ticketnumber.xml" />
+			<xi:include href="charts/current_phase_distribution.xml" />
+			<xi:include href="charts/escalation_for_analysis_vector.xml" />
+			<xi:include href="charts/escalation_for_pending_bmw.xml" />
+			<xi:include href="charts/closed_new.xml" />
+    		<xi:include href="charts/phase_ditribution.xml" />
+			<xi:include href="charts/category_distribution.xml" />
+		</charts>
+	</dashboard>
+
+	
+
+	<!-- <dashboard id="QUALITY_TICKET_FOLDER" onArtefactTypes="TICKET_FOLDER" nbColumns="4" template="1:2x1;2:2x1;3:4x2;" rowMaxHeight="250" topTablesMaxLines="8">
+		<scorecard>
+			<xi:include href="../../Shared/Analysis/key_performance_indicator_dynamic.xml" />
+			<tables  >
+			</tables>
+		</scorecard>
+
+		<tables>
+			<xi:include href="tables/ticket_table.xml" />
+		</tables>
+		<charts>
+			<xi:include href="charts/status_trend.xml" />
+		</charts>
+	</dashboard> -->
+
+
+
+	<dashboard id="QUALITY_TICKET" onArtefactTypes="TICKET" nbColumns="4" template="1:2x1;2:2x1;3:4x2;" rowMaxHeight="250" topTablesMaxLines="8">
+		<scorecard>
+			<xi:include href="../../Shared/Analysis/key_performance_indicator_dynamic.xml" />
+			<tables  >
+			</tables>
+		</scorecard>
+		<tables>
+			<xi:include href="tables/ticket_info.xml" />
+			<xi:include href="tables/ticket_metric.xml" />
+		</tables>
+		<charts>
+		</charts>
+	</dashboard>
+
+
+</bundle>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns:xi="http://www.w3.org/2001/XInclude">
+
+		
+	<!-- Wizards -->
+	<wizard wizardId="BMW_TICKET" versionPattern="V#N1#" img="../../Shared/Wizards/squore_logo.png" hideRulesEdition="false">
+		<milestones canCreateMilestone="true" canCreateGoal="true" >
+			<goals displayableFamilies="ANALYTICS_GOALS"/>  
+		</milestones>
+		<repositories all="false" hide="false">
+			<repository name="FROMPATH" />
+			<repository name="FROMZIP" />
+			<repository name="artifactory" />
+			<repository name="ClearCase" />
+			<!--<repository name="GNAThub" />-->
+			<repository name="GIT" />
+			<repository name="url" />
+			<!--<repository name="onedrive" />-->
+			<!-- <repository name="Perforce" /> -->
+			<!-- <repository name="MKS" /> -->
+			<!--<repository name="api_url" />-->
+			<repository name="SVN" />
+			<!-- <repository name="Synergy" /> -->
+			<!-- <repository name="TFS" /> -->
+		</repositories>
+		<tools show="LIST">
+			<tool name="import-ticket-data" 		optional="true" checkedInUI="false"/>
+		</tools>
+	</wizard>
+
+	<!-- Notifications -->
+	<xi:include href="../../Shared/Wizards/on_draft.xml"/>
+	<xi:include href="../../Shared/Wizards/on_baseline.xml"/>
+	<xi:include href="../../Shared/Wizards/on_failure.xml"/>
+
+
+</Bundle>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart id="CURRENT_PHASE_DISTRIBUTION" type="SimplePie" valueOnLabels="true">
+  <paths>
+    <path targetArtefactTypes="TICKET" />
+  </paths>
+  <indicator excludeLevels="RESOLVED;UNKNOWN">CURRENT_PHASE</indicator>
+</chart>
