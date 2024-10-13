@@ -549,9 +549,6 @@ class AAStackJira:
     def get_vector_bugs(self):
         # vector_bugs = self.cc_jira.search_issues('project = "Software Platform" and labels in (Vector_relevant) and created >= "2023-11-01"', expand='changelog')
         vector_bugs = set()
-        vector_bugs = self.cc_jira.search_issues('filter = 21777 AND (labels in (Vector_relevant) OR assignee in (membersOf(swh-xpad-ext-aas-vector))) \
-                                                 AND status != Following AND resolution = Unresolved ORDER BY issuetype DESC, priority DESC', \
-                                                 expand='changelog', maxResults = 500)
 
         #vector_bugs = self.cc_jira.search_issues('project = SWP AND issuetype in (Task, Bug, "TAEE Defect") AND labels in (ESCAN_fixed, ESCAN_open, ESCAN_planned) AND Variant in (ipn-10)', \
         #                                        expand='changelog')
@@ -564,10 +561,10 @@ class AAStackJira:
         #vector_bugs = self.cc_jira.search_issues('filter = 42437 AND (labels in (Vector_relevant) OR assignee = michaelmoeckpartner ) AND status != Following \
         #                                         AND labels not in (ipn_jc_aasr) ORDER BY issuetype DESC, priority DESC', \
         #                                         expand='changelog', maxResults = 500)
-        #for performance no POC
-        #vector_bugs = self.cc_jira.search_issues('filter = 42437 AND (labels in (Vector_relevant) OR assignee = michaelmoeckpartner) AND status != Following \
-        #                                         AND labels not in (Vector_POC) ORDER BY priority DESC, issuetype DESC', \
-        #                                         expand='changelog', maxResults = 500)
+        # for performance no POC
+        vector_bugs = self.cc_jira.search_issues('filter = 42437 AND (labels in (Vector_relevant) OR assignee = michaelmoeckpartner) AND status != Following \
+                                                AND labels not in (Vector_POC) ORDER BY priority DESC, issuetype DESC', \
+                                                expand='changelog', maxResults = 500)
 
         expanded = False
         if expanded is True:
